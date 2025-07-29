@@ -1,0 +1,13 @@
+# compilados
+dist
+build
+.next
+out
+
+# deps
+node_modules
+.pnpm-store
+
+# logs & env
+*.log
+.env*

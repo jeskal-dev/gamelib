@@ -1,0 +1,72 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+ @import "tailwindcss";
+
+@theme {
+  --font-head: 'Archivo Black', sans-serif;
+  --font-sans: 'Space Grotesk', sans-serif;
+
+  --shadow-xs: 1px 1px 0 0 var(--border);
+  --shadow-sm: 2px 2px 0 0 var(--border);
+  --shadow: 3px 3px 0 0 var(--border);
+  --shadow-md: 4px 4px 0 0 var(--border);
+  --shadow-lg: 6px 6px 0 0 var(--border);
+  --shadow-xl: 10px 10px 0 1px var(--border);
+  --shadow-2xl: 16px 16px 0 1px var(--border);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+}
+
+ 
+:root {
+  --background: #f2f5f7;          /* gris hielo claro */
+  --foreground: #0d0f11;          /* casi negro azulado */
+  --card: #ffffff;
+  --card-foreground: #0d0f11;
+  --primary: #00b4d8;             /* azul cian brillante */
+  --primary-hover: #0096c7;
+  --primary-foreground: #ffffff;
+  --secondary: #0d0f11;
+  --secondary-foreground: #ffffff;
+  --muted: #d0d7de;
+  --muted-foreground: #4a5568;
+  --accent: #90e0ef;              /* turquesa neón suave */
+  --accent-foreground: #0d0f11;
+  --destructive: #ff0055;         /* rojo neón */
+  --destructive-foreground: #ffffff;
+  --border: #0d0f11;
+}
+
+.dark {
+  --background: #0d0f11;          /* casi negro azulado */
+  --foreground: #e5e7eb;
+  --card: #111315;
+  --card-foreground: #e5e7eb;
+  --primary: #00b4d8;
+  --primary-hover: #0096c7;
+  --primary-foreground: #ffffff;
+  --secondary: #1e2226;
+  --secondary-foreground: #e5e7eb;
+  --muted: #252a30;
+  --muted-foreground: #9ca3af;
+  --accent: #90e0ef;
+  --accent-foreground: #0d0f11;
+  --destructive: #ff0055;
+  --destructive-foreground: #ffffff;
+  --border: #374151;
+}
