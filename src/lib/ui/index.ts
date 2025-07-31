@@ -3,5 +3,7 @@ export * from './Button';
 export * from './Card';
 export * from './Input';
 export * from './Select';
+export * from './Separator';
+export * from './Tab';
 export * from './Text';
 export * from './Tooltip';

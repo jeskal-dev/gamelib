@@ -18,15 +18,17 @@ export function Image({
   errorClassName = 'error',
   ...imgProps
 }: ImageProps) {
-  const { data: url, isPending, error } = useImage(src);
+  // const { data: url, isPending, error } = useImage(src);
 
-  if (isPending) return <div className={cn(skeletonClassName, className)} />;
-  if (error)
-    return (
-      <div className={cn(errorClassName, className)}>
-        <AlertTriangle />
-      </div>
-    );
+  // if (isPending) return <div className={cn(skeletonClassName, className)} />;
+  // if (error)
+  //   return (
+  //     <div className={cn(errorClassName, className)}>
+  //       <AlertTriangle />
+  //     </div>
+  //   );
 
-  return <img src={url} alt={alt} className={className} {...imgProps} />;
+  return (
+    <img src={src} decoding="async" alt={alt} className={className} {...imgProps} />
+  );
 }

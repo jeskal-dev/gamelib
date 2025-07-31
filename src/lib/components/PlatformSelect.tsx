@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from 'preact/hooks';
-import { useInfiniteGenres } from '../hooks/useGenres';
+import { useInfinitePlatforms } from '../hooks';
 import { Select, Text } from '../ui';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
   pageSize?: number;
 }
 
-export function GenreSelect({
+export function PlatformSelect({
   value,
   onValueChange,
   pageSize = 20,
@@ -17,7 +17,7 @@ export function GenreSelect({
 }: Props) {
   const target = useRef<HTMLDivElement>(null);
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } =
-    useInfiniteGenres({
+    useInfinitePlatforms({
       page_size: pageSize,
       ordering: 'name',
     });
@@ -40,11 +40,11 @@ export function GenreSelect({
     return observer.disconnect;
   }, [handleIntersection]);
 
-  const genres = data?.flatResults || [];
+  const platforms = data?.flatResults || [];
 
   return (
     <div>
-      <Text className="text-muted-foreground mb-2 text-sm">Género</Text>
+      <Text className="text-muted-foreground mb-2 text-sm">Plataforma</Text>
       <Select value={value} onValueChange={(value) => onValueChange?.(value)}>
         <Select.Trigger className="text-muted-foreground w-full">
           <Select.Value placeholder={placeholder} />
@@ -52,15 +52,15 @@ export function GenreSelect({
         <Select.Content>
           <Select.Group className="max-h-96 scroll-auto">
             <Select.Item value="all" className="text-muted-foreground">
-              Todos los géneros
+              Todas las plataformas
             </Select.Item>
-            {genres.map((genre) => (
+            {platforms.map((platform) => (
               <Select.Item
-                key={genre.option.value}
-                value={String(genre.option.value)}
+                key={platform.option.value}
+                value={String(platform.option.value)}
                 className="text-muted-foreground"
               >
-                {genre.option.label}
+                {platform.option.label}
               </Select.Item>
             ))}
             <div ref={target} className="h-10" />

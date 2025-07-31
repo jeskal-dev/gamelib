@@ -8,8 +8,8 @@ export const GamePlatformSchema = z.object({
   }),
   released_at: z.string(),
   requirements: z.object({
-    minimum: z.string(),
-    recommended: z.string(),
+    minimum: z.string().optional(),
+    recommended: z.string().optional(),
   }),
 });
 

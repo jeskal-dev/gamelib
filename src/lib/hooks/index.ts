@@ -1,3 +1,5 @@
-export * from './useAnimeDetails';
-export * from './useAnimeList';
+export * from './useGamesDetails';
+export * from './useGamesList';
+export * from './useGenres';
 export * from './useImage';
+export * from './usePlataforms';

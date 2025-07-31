@@ -6,6 +6,7 @@ import { parseResponse } from '../parser/parseResponse';
 import type { RAWGRequest } from '../request';
 import { RAWGResponse } from '../response';
 import { GenreSchema } from '../models/Genre';
+import { PlatformSchema } from '../models/Plataform';
 
 export const rawg = {
   async getGameList(query?: RAWGRequest, axios?: AxiosRequestConfig) {
@@ -30,6 +31,14 @@ export const rawg = {
    
     const parsed = parseResponse(RAWGResponse(GenreSchema), response.data);
      
+    return parsed;
+  },
+  async getPlatforms(query?: Partial<RAWGRequest>, axios?: AxiosRequestConfig) {
+    const response = await http.get('/platforms', {
+      ...axios,
+      params: query,
+    });
+    const parsed = parseResponse(RAWGResponse(PlatformSchema), response.data);
     return parsed;
   },
 };
